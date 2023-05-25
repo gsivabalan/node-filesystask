@@ -1,5 +1,6 @@
 
 const express = require("express");
+require('dotenv').config()
 const fs = require("fs");
 const bodyParser = require("body-parser");
 
@@ -39,5 +40,5 @@ app.get("/api/text-files", (req, res) => {
   res.json(textFiles);
 });
 
-app.listen(9000, () => console.log("Server started on localhost:9000"));
+app.listen(process.env.PORT || 9000, () => console.log("Server started on localhost:9000"));
 
